@@ -17,9 +17,11 @@ class Persona implements Comparable<Persona> {
 
     @Override
     public int compareTo(Persona otra) {
-
-        return CharSequence.compare(this.nombre, otra.nombre);
-
+        int compararEdad = Integer.compare(this.edad, otra.edad);
+        if(compararEdad != 0){
+            return compararEdad;
+        }
+        return this.nombre.compareTo(otra.nombre);
     }
 
     @Override
